@@ -1,16 +1,19 @@
 // This post was very helpful!
 // http://antimatter15.com/wp/2010/07/javascript-to-animated-gif/
 
-function datGif() { // give external JS 1 second of time to load
+function datGif() { 
 
     console.log('Starting');
 
     var canvas = document.getElementById("screen");
     var context = canvas.getContext('2d');
     var shots  = [];
-    var grabLimit = 10;  // Number of screenshots to take
-    var grabRate  = 10; // Miliseconds. 500 = half a second, was 100
+    var grabLimit = 6;  // Number of screenshots to take
+    var grabRate  = 1000; // Miliseconds. 500 = half a second, was 100
     var count     = 0;
+    //Quick math:
+    //Full rotation of canvas is 6 seconds.
+    //
 
     function showResults() {
         console.log('Finishing');
