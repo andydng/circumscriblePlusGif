@@ -370,7 +370,7 @@ var w = setTimeout(function() { // give external JS 1 second of time to load
     var context = canvas.getContext('2d');
     var shots  = [];
     var grabLimit = 10;  // Number of screenshots to take
-    var grabRate  = 100; // Miliseconds. 500 = half a second
+    var grabRate  = 10; // Miliseconds. 500 = half a second, was 100
     var count     = 0;
 
     function showResults() {
@@ -383,7 +383,7 @@ var w = setTimeout(function() { // give external JS 1 second of time to load
 
     var encoder = new GIFEncoder();
     encoder.setRepeat(0);  //0  -> loop forever, 1+ -> loop n times then stop
-    encoder.setDelay(500); //go to next frame every n milliseconds
+    encoder.setDelay(100); //go to next frame every n milliseconds 500
     encoder.start();
 
     var grabber = setInterval(function(){
