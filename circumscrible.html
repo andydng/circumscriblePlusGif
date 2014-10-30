@@ -33,6 +33,13 @@ body {
 	cursor: pointer;
 	z-index: 0;
 }
+#clickme{
+	z-index: 1;
+	position: fixed;
+	top:75%;
+	left: 75%;
+	background-color: white;
+}
 </style>
 
 <script src="js/ge1doot.js"></script>
@@ -40,6 +47,8 @@ body {
 <script type="text/javascript" src="js/NeuQuant.js"></script> 
 <script type="text/javascript" src="js/GIFEncoder.js"></script> 
 <script type="text/javascript" src="js/b64.js"></script> 
+<script type="text/javascript" src="js/makeGif.js"></script> 
+
 
 <script>
 /* =======================================================
@@ -340,68 +349,8 @@ body {
 </head>
 <body>
 <canvas id="screen">HTML5 CANVAS 3D Drawing demo</canvas>
+<button id="clickme" >Click meh</button>
 
-<script>
-/*
-var canvas = document.getElementById('screen');
-var img = canvas.toDataURL("image/gif");
-document.write('<img src="'+img+'"/>');
-var encoder = new GIFEncoder(); 
-encoder.setRepeat(0); //0 -> loop forever //1+ -> loop n times then stop 
-encoder.setDelay(500); 
-//go to next frame every n milliseconds 
-encoder.start(); 
-encoder.addFrame(canvas);
-encoder.finish(); 
-var binary_gif = encoder.stream().getData() //notice this is different from the as3gif package! 
-var data_url = 'data:image/gif;base64,'+encode64(binary_gif); */
-</script>
-
-<script>
-
-// This post was very helpful!
-// http://antimatter15.com/wp/2010/07/javascript-to-animated-gif/
-
-var w = setTimeout(function() { // give external JS 1 second of time to load
-
-    console.log('Starting');
-
-    var canvas = document.getElementById("screen");
-    var context = canvas.getContext('2d');
-    var shots  = [];
-    var grabLimit = 10;  // Number of screenshots to take
-    var grabRate  = 10; // Miliseconds. 500 = half a second, was 100
-    var count     = 0;
-
-    function showResults() {
-        console.log('Finishing');
-        encoder.finish();
-        var binary_gif = encoder.stream().getData();
-        var data_url = 'data:image/gif;base64,'+encode64(binary_gif);
-        document.write('<img src="' +data_url + '"/>\n');
-    }
-
-    var encoder = new GIFEncoder();
-    encoder.setRepeat(0);  //0  -> loop forever, 1+ -> loop n times then stop
-    encoder.setDelay(100); //go to next frame every n milliseconds 500
-    encoder.start();
-
-    var grabber = setInterval(function(){
-      console.log('Grabbing '+count);
-      count++;
-
-      if (count>grabLimit) {
-        clearInterval(grabber);
-        showResults();
-      }
-
-      var imdata = context.getImageData(0,0,canvas.width,canvas.height);
-      encoder.addFrame(context);
-
-    }, grabRate);
-
-}, 1000);
-</script>
 
 <!--nav-->
 <!--ga-->
