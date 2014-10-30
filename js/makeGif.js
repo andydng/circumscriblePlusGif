@@ -17,7 +17,11 @@ function datGif() { // give external JS 1 second of time to load
         encoder.finish();
         var binary_gif = encoder.stream().getData();
         var data_url = 'data:image/gif;base64,'+encode64(binary_gif);
-        document.write('<img src="' +data_url + '"/>\n');
+        //document.write('<img src="' +data_url + '"/>\n');
+        
+        var newwindow=window.open();
+        var newdocument=newwindow.document;
+        newdocument.write('<img src="' +data_url + '"/>\n');
     }
 
     var encoder = new GIFEncoder();
