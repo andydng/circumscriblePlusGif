@@ -1,0 +1,113 @@
+<p!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<link rel="icon" type="image/png" href="assets/MM_favicon.ico" />
+<script type="text/javascript" src="http://www.google.com/jsapi"></script>
+<script type="text/javascript"> google.load("jquery", "1.4.2"); </script>
+<script type="text/javascript"> google.load("jqueryui", "1.8.6"); </script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js"></script>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<!-- CSS Files -->
+<link type="text/css" href="css/bpradio.css" rel="stylesheet" />
+    <title> BP Radio </title>
+</head>
+
+<body>
+<div id="container">
+
+<div id="title"> Bipolar Radio </div>
+
+<div id="search">
+    <input title="Enter an artist name" type="text"  id="artist_name" class="tip"
+            onclick="searchClicked()" onkeydown="if (event.keyCode == 13) newArtist()"
+        name="artist" value='Enter artist name'/>
+</div>
+
+<div id="player">
+    <div id="album-art" title="visit this album at Rdio"> 
+        <img width="200px" height="200px" alt="masks" src="img/mask2.jpeg"/> 
+    </div>
+    <div id="controls">
+        <div id="audio-info">
+            <div class="limited-label" title="visit this song at Rdio" id="song-title"> </div>
+            <div class="limited-label" title="visit this artist at Rdio" id="artist-name"> </div>
+        </div>
+        <div id="audio-controls">
+            <a title="pause/play the music" id="pause" class="button tip">pause</a>
+            <a title="advance to the next track"  id="next" class="button tip">next</a>
+            <a title="opens this track on the Rdio web site" id="buy"
+            class="tip" target="rdio" href="http://rdio.com"><img
+            alt="rdio logo" src="img/RdioBlueLogoSmall.png"/></a>
+        </div>
+        <div id="audio-footer">
+            <span id="track-time" title="click to reverse the direction of time"> 00:00 </span>
+            <a class="tip" title="mutes/unmutes the music" id="mute"> <img alt="mute" id="mute_img" src="img/Sound_Button.png"/></a>
+        </div>
+    </div>
+</div>
+
+<div id="center-container">
+
+    <!--
+    <button type="button" title="upbeat"  id="upbeat"> Upbeat </button>
+    <button type="button" title="midrange"  id="midrange"> Midrange </button>
+    <button type="button" title="chill"  id="chill"> Chill </button>
+    -->
+    <div id="button-panel">
+        <img class="mbutton" id="chill" width="200px" height="200px" src="img/normal.png" title="immediately plays a chill out song by the current artist">
+        <!--
+        <img class="mbutton" id="midrange" width="200px" height="200px" src="assets/normal.png" title="plays a normal song by the current artist">
+        -->
+        <img class="mbutton" id="upbeat" width="200px" height="200px" src="img/happy.png" title="plays a high energy song by the current artist">
+    </div>
+    <div id="log">
+        <noscript> Sorry! The Bipolar Radio needs JavaScript, but that is not
+                   enabled in your browser.
+        </noscript>
+    </div>
+
+    <div id="song-table"> </div>
+
+<div id='footer'>
+    Powered by <a href='http://developer.echonest.com'>The Echo Nest</a>. 
+    &nbsp; &nbsp;
+    Music powered by 
+    <a
+    href="http://click.linksynergy.com/fs-bin/click?id=C4uB5cRj/Ro&offerid=221756.10000004&type=3&subid=0"
+    >Rdio</a><IMG border=0 width=1 height=1
+    src="http://ad.linksynergy.com/fs-bin/show?id=C4uB5cRj/Ro&bids=221756.10000004&type=3&subid=0">
+    &nbsp; &nbsp;
+    More info at <a href='http://musicmachinery.com/2011/05/08/bipolar-radio/'>Music Machinery</a>
+    &nbsp; &nbsp;
+    <br/>
+    <IMG border=0 width=1 height=1
+    src="http://ad.linksynergy.com/fs-bin/show?id=C4uB5cRj/Ro&bids=221756.10000004&type=3&subid=0"
+    >
+</div>
+</div>
+
+<div id="apiswf"></div>
+
+<script type="text/javascript">
+
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-3675615-22']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+var ga = document.createElement('script'); ga.type =
+'text/javascript'; ga.async = true;
+ga.src = ('https:' == document.location.protocol ? 'https://ssl' :
+'http://www') + '.google-analytics.com/ga.js';
+var s = document.getElementsByTagName('script')[0];
+s.parentNode.insertBefore(ga, s);
+})();
+
+</script>
+
+<script language="javascript" type="text/javascript" src="js/bpradio.js"></script>
+<script language="javascript" type="text/javascript" src="js/rdio.js"></script>
+</body>
+</html>
