@@ -10,11 +10,13 @@
 <meta name="keywords" content="canvas,3D,drawing">
 <link rel="canonical" href="http://www.dhteumeuleu.com/circumscrible">
 <!--cssnav-->
+
 <script type="text/javascript" src="http://www.google.com/jsapi"></script>
 <script type="text/javascript"> google.load("jquery", "1.4.2"); </script>
 <script type="text/javascript"> google.load("jqueryui", "1.8.6"); </script>
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js"></script>
 <!-- <link type="text/css" href="css/bpradio.css" rel="stylesheet" /> -->
+
 <title>circumscrible - HTML5 3D CANVAS drawing</title>
 <style>
 html {
@@ -38,12 +40,20 @@ body {
 	z-index: 0;
 	float: left;
 }
+<<<<<<< HEAD
 
 #clickme{
 	z-index: 1;
 	position: fixed;
 	top:90%;
 	left: 80%;
+=======
+#clickme{
+	z-index: 1;
+	position: fixed;
+	top:75%;
+	left: 75%;
+>>>>>>> FETCH_HEAD
 	background-color: white;
 }
 
@@ -56,11 +66,15 @@ body {
 .row{
 	background-color: white;
 }
+<<<<<<< HEAD
 .container, #apiswf
 
 /*, #artist_name, #album-art, #controls, #audio-info, #ong-title, #artist-name, #audio-controls,#pause, .button, #next, #audio-footer, #track-time, .tip, .mbutton, #log
 {
 */
+=======
+.container, #apiswf{
+>>>>>>> FETCH_HEAD
 	z-index: 2;
 }
 .container img{
@@ -348,6 +362,7 @@ body {
 			if (e.keyCode == 32) {
 				auto = !auto;
 			}
+<<<<<<< HEAD
 			// ---- clear shapes [c] ----
 			if (e.keyCode == 67) {
 				shapes.length = 0;
@@ -357,15 +372,28 @@ body {
 				if (shapes.length > 0) {
 					shapes.length--;
 				}
+=======
+			// ---- undo shapes [DEL] ----
+			if (e.keyCode == 46) {
+				context.clearRect(0, 0, canvas.width, canvas.height);
+				if (shapes.length > 0) {
+					shapes.length--;
+				}
+				// the above doesn't seem to do anything
+				// shapes.length = 0;
+>>>>>>> FETCH_HEAD
 			}
 			// ---- switch global Z [Z] ----
 			if (e.keyCode == 90) {
 				if (globalZ == 0) globalZ = fov * 0.35; else globalZ = 0;
 			}
+<<<<<<< HEAD
 			// ---- change color [1] ----
 			if(e.keyCode == 49 ){
 				ctx.strokeStyle = "#ffc";
 			}
+=======
+>>>>>>> FETCH_HEAD
 			// ---- save/load [S/L]----
 			if (e.keyCode == 83 && storage) save("circumscrible");
 			if (e.keyCode == 76 && storage) load("circumscrible");
@@ -462,9 +490,19 @@ body {
     <div id="song-table"></div>
 
 	<div class="well" style="overflow: hidden;">
+<<<<<<< HEAD
 		<input title="Enter an artist name" type="text"  id="artist_name" class="tip" onclick="searchClicked()" onkeydown="if (event.keyCode == 13) newArtist()" name="artist" value='Enter artist name'/>
 
 		<!-- <div id="player"> -->
+=======
+	    <div id="search">
+		    <input title="Enter an artist name" type="text"  id="artist_name" class="tip"
+		            onclick="searchClicked()" onkeydown="if (event.keyCode == 13) newArtist()"
+		        name="artist" value='Enter artist name'/>
+		</div>
+
+		<div id="player">
+>>>>>>> FETCH_HEAD
 		    <div id="album-art" title="visit this album at Rdio"> 
 		        <img width="200px" height="200px" alt="masks" src="img/mask2.jpeg"/> 
 		    </div>
@@ -482,6 +520,7 @@ body {
 		            <a class="tip" title="mutes/unmutes the music" id="mute"> <img alt="mute" id="mute_img" src="img/Sound_Button.png"/></a>
 		        </div>
 		    </div>
+<<<<<<< HEAD
 		<!-- </div> -->
         <img class="mbutton" id="chill" width="200px" height="200px" src="img/normal.png" title="immediately plays a chill out song by the current artist">
         <img class="mbutton" id="upbeat" width="200px" height="200px" src="img/happy.png" title="plays a high energy song by the current artist">
@@ -490,6 +529,11 @@ body {
 	                   enabled in your browser.
 	        </noscript>
 	    </div>
+=======
+		</div>
+        <img class="mbutton" id="chill" width="200px" height="200px" src="img/normal.png" title="immediately plays a chill out song by the current artist">
+        <img class="mbutton" id="upbeat" width="200px" height="200px" src="img/happy.png" title="plays a high energy song by the current artist">
+>>>>>>> FETCH_HEAD
 	</div>
 </div>
 

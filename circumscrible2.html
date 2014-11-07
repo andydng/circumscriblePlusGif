@@ -159,6 +159,15 @@ body {
 	}
 	// ==== draw shape ====
 	Shape.prototype.draw = function () {
+<<<<<<< HEAD
+		var selColor = document.getElementById("selColor");
+		var datColor;
+		if (selColor.value==1){
+			datColor='hsl(' + Math.round(Math.random() * 360) + ', 90%, 60%)';
+		}
+	  	else { datColor = selColor.value; }
+=======
+>>>>>>> f59f752148b5fbd79e98062d992f1393db666f68
 		// ---- 3D to 2D points projection ----
 		for (var i = 0; i < this.length; i++) {
 			this.points[i].project(this.fov);
@@ -178,15 +187,26 @@ body {
 		}
 		// ---- paint ----
 		// originally white
+<<<<<<< HEAD
+		//ctx.strokeStyle = "#00f";
+		ctx.strokeStyle=datColor;
+=======
 		// ctx.strokeStyle = "#fff";
 
+>>>>>>> f59f752148b5fbd79e98062d992f1393db666f68
 		// as of yet does nothing
 		// $('#linecolor').click(function(){
 		// 	ctx.strokeStyle = 'hsl(' + Math.round(Math.random() * 360) + ', 90%, 60%)';
 		// });
+<<<<<<< HEAD
+		//ctx.strokeStyle='#'+(Math.random()*0xFFFFFF<<0).toString(16);
+		// crazy technicolor
+		//ctx.strokeStyle = 'hsl(' + Math.round(Math.random() * 360) + ', 90%, 60%)';
+=======
 		
 		// crazy technicolor
 		ctx.strokeStyle = 'hsl(' + Math.round(Math.random() * 360) + ', 90%, 60%)';
+>>>>>>> f59f752148b5fbd79e98062d992f1393db666f68
 
 		// edits thickness of the line
 		ctx.lineWidth = 10;
@@ -346,19 +366,40 @@ body {
 			if (e.keyCode == 32) {
 				auto = !auto;
 			}
+<<<<<<< HEAD
+			// ---- undo shapes [-] ----
+			if (e.keyCode == 173) {
+				//context.clearRect(0, 0, canvas.width, canvas.height);
+=======
 			// ---- undo shapes [DEL] ----
 			if (e.keyCode == 46) {
 				context.clearRect(0, 0, canvas.width, canvas.height);
+>>>>>>> f59f752148b5fbd79e98062d992f1393db666f68
 				if (shapes.length > 0) {
 					shapes.length--;
 				}
 				// the above doesn't seem to do anything
 				// shapes.length = 0;
 			}
+<<<<<<< HEAD
+			// ---- clear shapes [C]
+			if (e.keyCode == 67) {
+				shapes.length = 0;
+			}
+=======
+>>>>>>> f59f752148b5fbd79e98062d992f1393db666f68
 			// ---- switch global Z [Z] ----
 			if (e.keyCode == 90) {
 				if (globalZ == 0) globalZ = fov * 0.35; else globalZ = 0;
 			}
+<<<<<<< HEAD
+
+			// ---- Color buttons [1,2,3....]
+			if (e.keyCode == 49) {
+
+			}
+=======
+>>>>>>> f59f752148b5fbd79e98062d992f1393db666f68
 			// ---- save/load [S/L]----
 			if (e.keyCode == 83 && storage) save("circumscrible");
 			if (e.keyCode == 76 && storage) load("circumscrible");
@@ -385,7 +426,11 @@ body {
 			s.draw();
 		}
 		ctx.lineWidth = 1;
+<<<<<<< HEAD
+		//ctx.strokeStyle = #fff;
+=======
 		ctx.strokeStyle = "#fff";
+>>>>>>> f59f752148b5fbd79e98062d992f1393db666f68
 		ctx.stroke();
 		// ---- animation loop ----
 		requestAnimFrame(run);
@@ -425,6 +470,15 @@ body {
 	]
 	);
 </script>
+<<<<<<< HEAD
+<script type="text/javascript">
+	function changeColor(){
+	  var selColor = document.getElementById("selColor");
+	  var color = selColor.value;
+	  document.body.style.backgroundColor = color;
+	  }
+</script>
+=======
 <script>
 	// ctx = this.elem.tagName == "CANVAS" ? this.elem.getContext("2d") : false;
 	// $(document).ready(function(){
@@ -446,6 +500,7 @@ body {
       // }, false);
 
     </script>
+>>>>>>> f59f752148b5fbd79e98062d992f1393db666f68
 </head>
 <body>
 
@@ -491,6 +546,31 @@ body {
 		<button id="linecolor">Change Line Color</button>
 		<input type="button" id="clear" value="Clear">
 		<br/>
+<<<<<<< HEAD
+		<p>Space to pause</p>
+		<p>Z to change dimension</p>
+		<p>S to save</p>
+		<p>To make a gif of your drawing, click 'press meh'.</p>
+		<form action = "">
+		  <fieldset>
+		  <select id = "selColor">
+		   <option value = "#FFFFFF">White</option>
+		   <option value = "#FF0000">Red</option>
+		   <option value = "#FFCC00">Orange</option>
+		   <option value = "#FFFF00">Yellow</option>
+		   <option value = "#00FF00">Green</option>
+		   <option value = "#0000FF">Blue</option>
+		   <option value = "#663366">Indigo</option>
+		   <option value = "#FF00FF">Violet</option>
+		   <option value = "1">Seizure</option>
+
+		  </select>
+		  <input type = "button"
+		    value = "change color"
+		    onclick = "changeColor()" />
+		  </fieldset>
+		 </form>
+=======
 		<p>Press space bar to pause rotation of drawing.</p>
 		<br/>
 		<p>Press and hold z to alter the dimenion of your current line.</p>
@@ -499,6 +579,7 @@ body {
 		<p>At any point after you can press 'l' to load the drawing you saved.</p>
 		<br/>
 		<p>To make a gif of your drawing, click 'press meh'.</p>
+>>>>>>> f59f752148b5fbd79e98062d992f1393db666f68
 	</div>
 </div>
 
